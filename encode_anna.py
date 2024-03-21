@@ -48,8 +48,28 @@ def encode(password):       # I wrote this part
     return empty_password
 
 
-def decode(password):       # you will be finishing this function!
-    pass
+def decode(encode_password):  # you will be finishing this function!
+    joined_string_decoded = ""
+    """ Abby is making changes to Anna's code in the encode function"""
+    encoded_password2 = encode(encode_password)
+    for char in encoded_password2:
+        """converts each individual string character in the encoded password to an integer 
+            value and assigns it to the variable int_pass"""
+        int_pass = int(char)
+        """subtracts three from the value of the individual string character in the encoded password"""
+        subtracted_word = int_pass - 3
+        print(subtracted_word)
+        subtractedword_as_string = str(subtracted_word)
+        """converts the endcoded individual integers into individual strings"""
+        joined_string_decoded = joined_string_decoded + subtractedword_as_string
+    print(joined_string_decoded)
+
+    return joined_string_decoded
+
+    """print statement that tells the user what the encoded password is and what the original 
+           password is"""
+
+
 
 def main():     # my main menu function
 
@@ -71,7 +91,7 @@ def main():     # my main menu function
 
         elif user_option == 2:
             decode(encode_password)
-            print(f"The encoded password is {encode(encode_password)} and the original password is {decode(encode(encode_password))}")
+            print(f"The encoded password is {encode(encode_password)} and the original password is {decode(encode_password)}")
             # f string where I inserted encode/decode functions.
 
         elif user_option == 3:
